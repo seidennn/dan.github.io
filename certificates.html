@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificates - Eric Condes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Shared Navbar -->
+<header>
+      <div class="logo">ERIC CONDES</div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="index.html#works">WORKS</a>
+        <a href="certificates.html">CERTIFICATES</a>
+      </nav>
+    </header>
+
+    <!-- Certificates Section -->
+    <section class="certificate-section">
+      <div class="cert-container">
+        
+        <!-- Sidebar -->
+        <div class="cert-sidebar">
+          <button data-category="sketchup" class="active">SketchUp</button>
+          <button data-category="lumion">Lumion</button>
+          <button data-category="autocad">AutoCAD</button>
+          <button data-category="revit">Revit</button>
+        </div>
+
+        <!-- Main display -->
+        <div class="cert-display">
+          <button class="nav-arrow left">&#10094;</button>
+          
+          <div class="certificate-placeholder" id="cert-image">
+            <!-- Certificate image appears here -->
+          </div>
+
+          <button class="nav-arrow right">&#10095;</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Certificate image data (update file names based on your actual files)
+    const certificates = {
+      sketchup: ["cert/up1.png", "cert/up2.png", "cert/up3.png", "cert/up4.png", "cert/up5.png", "cert/up6.png"],
+      lumion: ["cert/lum1.png"],
+      autocad: ["cert/cad1.png", "cert/cad2.png"],
+      revit: ["certificates/sk/revit1.jpg", "certificates/sk/revit2.jpg"]
+      
+    };
+
+    let currentCategory = "sketchup";
+    let currentIndex = 0;
+
+    const display = document.getElementById("cert-image");
+    const buttons = document.querySelectorAll(".cert-sidebar button");
+    const leftArrow = document.querySelector(".nav-arrow.left");
+    const rightArrow = document.querySelector(".nav-arrow.right");
+
+    function updateDisplay() {
+      const currentList = certificates[currentCategory];
+      const imgSrc = currentList[currentIndex];
+      display.innerHTML = `<img src="${imgSrc}" alt="Still learning">`;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = btn.dataset.category;
+        currentIndex = 0;
+        updateDisplay();
+      });
+    });
+
+    leftArrow.addEventListener("click", () => {
+      const list = certificates[currentCategory];
+      currentIndex = (currentIndex - 1 + list.length) % list.length;
+      updateDisplay();
+    });
+
+    rightArrow.addEventListener("click", () => {
+      const list = certificates[currentCategory];
+      currentIndex = (currentIndex + 1) % list.length;
+      updateDisplay();
+    });
+
+    // Load the first image on page load
+    updateDisplay();
+  </script>
+</body>
+</html>
