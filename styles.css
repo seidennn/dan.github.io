@@ -147,6 +147,15 @@ main {
   color: #fff;
 }
 
+.work-description {
+  color: #ccc;
+  font-size: 18px;
+  margin: 10px 0 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+
 .section-title h2 {
   font-size: 3em;
   font-weight: 800;
