@@ -375,3 +375,52 @@ main {
   cursor: pointer;
 }
 
+.software-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 80px;
+  padding-right: 20px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.logo-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-card {
+  width: 100px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  margin: 0 auto 5px;
+}
+
+.logo-card p {
+  font-size: 15px;
+  margin: 0;
+}
