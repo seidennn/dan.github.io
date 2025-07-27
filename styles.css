@@ -97,7 +97,7 @@ main {
 .about-left {
   width: 45%;
   position: relative;
-  margin-left: 80px;
+  margin-left: 40px;
 }
 
 .image-frame {
@@ -132,7 +132,7 @@ main {
 
 .about-right p {
   color: #333;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -180,7 +180,7 @@ main {
   font-weight: bold;
   color: #ccc;
   cursor: pointer;
-  font-size: 1.3em;
+  font-size: 1.5em;
   padding: 10px 20px;
   letter-spacing: 0.5px;
 }
