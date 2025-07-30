@@ -157,7 +157,13 @@
         <div class="work-item hidden-by-default" data-category="autocad"><img src="assets/cad/roof.png" /></div>
         <div class="work-item hidden-by-default" data-category="autocad"><img src="assets/cad/approach.png" /></div>
 
-        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/structuralmodel.gif"/></div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/residential1.gif" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/structural.gif" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/column1.png" /></div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/structuralmodel.gif" />
+        </div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/adddim.png" /></div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/addrebar.png" /></div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/annobeam.png" /></div>
@@ -165,7 +171,8 @@
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/braceframe.jpg" /></div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/customview.png" /></div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/gridsteel.png" /></div>
-        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/materialschedule.png" /></div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/materialschedule.png" />
+        </div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/revisionsheet.jpg" /></div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/spotelevations.png" /></div>
       </div>
@@ -328,7 +335,32 @@
     modalImg.src = "";
   }
 
-  document.querySelector('.work-filters button.active').click();
+  // Update URL hash when button is clicked
+  document.querySelectorAll('.work-filters button').forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      history.replaceState(null, null, `#${filter}`);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    const hash = location.hash.replace('#', '');
+
+    if (hash) {
+      const targetButton = document.querySelector(`.work-filters button[data-filter="${hash}"]`);
+      if (targetButton) {
+        targetButton.click();
+        document.querySelector('#works')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // No hash — click the "All" button by default
+      const defaultButton = document.querySelector('.work-filters button[data-filter="all"]');
+      if (defaultButton) {
+        defaultButton.click();
+      }
+    }
+  });
+
 
 
 
