@@ -56,7 +56,7 @@
           <button data-filter="blender">BLENDER</button>
           <button data-filter="zbrush">ZBRUSH</button>
           <button data-filter="sketchup">SKETCHUP</button>
-          <button data-filter="lumion">LUMION</button>
+          <button data-filter="enscape">ENSCAPE</button>
           <button data-filter="autocad">AUTOCAD</button>
           <button data-filter="revit">REVIT</button>
         </div>
@@ -131,8 +131,11 @@
         <div class="work-item hidden-by-default" data-category="zbrush"><img src="assets/zb/sclpt10.jpg" /></div>
         <div class="work-item hidden-by-default" data-category="zbrush"><img src="assets/zb/sclpt11.jpg" /></div>
 
-        <div class="work-item hidden-by-default" data-category="lumion"><img src="assets/binl.png" /></div>
-        <div class="work-item hidden-by-default" data-category="lumion"><img src="assets/bencl.png" /></div>
+        <div class="work-item hidden-by-default" data-category="enscape"><img src="assets/enscape/enscape1.png" /></div>
+        <div class="work-item hidden-by-default" data-category="enscape"><img src="assets/enscape/enscape2.png" /></div>
+        <div class="work-item hidden-by-default" data-category="enscape"><img src="assets/enscape/enscape3.png" /></div>
+        <div class="work-item hidden-by-default" data-category="enscape"><img src="assets/enscape/enscape4.png" /></div>
+
 
         <div class="work-item hidden-by-default" data-category="sketchup"><img src="assets/benc.png" /></div>
         <div class="work-item hidden-by-default" data-category="sketchup"><img src="assets/bin.png" /></div>
@@ -157,6 +160,22 @@
         <div class="work-item hidden-by-default" data-category="autocad"><img src="assets/cad/roof.png" /></div>
         <div class="work-item hidden-by-default" data-category="autocad"><img src="assets/cad/approach.png" /></div>
 
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/enscape1.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/enscape2.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/enscape3.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/enscape4.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/perspec1.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/fplans1.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/elevsheet1.png" />
+        </div>
+        <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/res1.gif" />
+        </div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/residential1.gif" />
         </div>
         <div class="work-item hidden-by-default" data-category="revit"><img src="assets/rvt/structural.gif" />
@@ -354,7 +373,7 @@
       }
     } else {
       // No hash — click the "All" button by default
-      const defaultButton = document.querySelector('.work-filters button[data-filter="all"]');
+      const defaultButton = document.querySelector('.work-filters button[data-filter="graphic"]');
       if (defaultButton) {
         defaultButton.click();
       }
