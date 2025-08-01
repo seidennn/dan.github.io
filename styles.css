@@ -145,6 +145,10 @@ main {
   color: #fff;
 }
 
+.work-item {
+  display: none;
+}
+
 .work-description {
   color: #ccc;
   font-size: 18px;
@@ -230,10 +234,6 @@ main {
 .highlight-text h3 {
   font-size: 1.4em;
   margin-bottom: 8px;
-}
-
-.hidden-by-default {
-  display: none;
 }
 
 .certificate-section {
