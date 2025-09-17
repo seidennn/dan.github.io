@@ -348,19 +348,31 @@
   });
 
   window.addEventListener('load', () => {
-    const hash = location.hash.replace('#', '');
-    const validFilters = ["graphic", "lightroom", "blender", "zbrush", "sketchup", "enscape", "autocad", "revit"];
-    const defaultCategory = "graphic";
+  const hash = location.hash.replace('#', '');
+  const validFilters = ["graphic", "lightroom", "blender", "zbrush", "sketchup", "enscape", "autocad", "revit"];
+  const defaultCategory = "graphic";
 
-    // Check if hash is a valid filter
-    const filterToApply = validFilters.includes(hash) ? hash : defaultCategory;
+  // Check if hash is a valid filter
+  const filterToApply = validFilters.includes(hash) ? hash : defaultCategory;
 
-    const targetButton = document.querySelector(`.work-filters button[data-filter="${filterToApply}"]`);
-    if (targetButton) {
-      targetButton.click();
-      history.replaceState(null, '', `#${filterToApply}`);
-    }
-  });
+  const targetButton = document.querySelector(`.work-filters button[data-filter="${filterToApply}"]`);
+  if (targetButton) {
+    // simulate filter logic directly instead of waiting for click
+    targetButton.classList.add("active");
+    descriptionEl.textContent = descriptions[filterToApply] || "";
+
+    workItems.forEach(item => {
+      const category = item.getAttribute("data-category");
+      if (category === filterToApply) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    history.replaceState(null, '', `#${filterToApply}`);
+  }
+});
 
 
 
