@@ -349,8 +349,11 @@
 
   window.addEventListener('load', () => {
     const hash = location.hash.replace('#', '');
-    const defaultCategory = 'graphic';
-    const filterToApply = hash || defaultCategory;
+    const validFilters = ["graphic", "lightroom", "blender", "zbrush", "sketchup", "enscape", "autocad", "revit"];
+    const defaultCategory = "graphic";
+
+    // Check if hash is a valid filter
+    const filterToApply = validFilters.includes(hash) ? hash : defaultCategory;
 
     const targetButton = document.querySelector(`.work-filters button[data-filter="${filterToApply}"]`);
     if (targetButton) {
